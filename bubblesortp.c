@@ -51,27 +51,27 @@ void bubbleSortp(int numbers[], int n){
     	{
 		if(k%2==0){
 			#pragma omp for
-			for (int i = 0; i < (n/2)-1; ++i)
+			for (int i = 0; i < (n/2); ++i)
 			{
-				if(numbers[2*i]>numbers[2*i+1]){
+				if(numbers[2*i]>numbers[(2*i)+1]){
 					tmp= numbers[2*i];
-					numbers[2*i]  = numbers[2*i+1];
-					numbers[2*i+1] = tmp;
+					numbers[2*i]  = numbers[(2*i)+1];
+					numbers[(2*i)+1] = tmp;
 				}
 			}
 		}
 		else{
 			#pragma omp for
-			for (int i = 0; i < (n/2)-2; ++i)
+			for (int i = 0; i < (n/2)-1; ++i)
 			{
-				if(numbers[2*i+1]>numbers[2*i+2]){
+				if(numbers[(2*i)+1]>numbers[(2*i)+2]){
 				tmp = numbers[2*i+1];
-				numbers[2*i+1]  = numbers[2*i+2];
-				numbers[2*i+2] = tmp;
+				numbers[(2*i)+1]  = numbers[(2*i)+2];
+				numbers[(2*i)+2] = tmp;
 				}
 			}
 		}
-	}
+	  }
 	}
 }
 
